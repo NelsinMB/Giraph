@@ -1,4 +1,10 @@
 from main.Graph import Graph
 
-x = Graph({'a': ['b', 'c'], 'b': ['c']}, "test")
-print(x.adjacency_list.get('a'))
+g = Graph(adjacency_list={
+    "a": ["b", "c"],
+    "b": ["c"],
+    "c": []
+})
+
+g.delete_edge("a", "b", directed=True)
+print(g.adjacency_list)  # {'a': ['c'], 'b': ['c'], 'c': []}
